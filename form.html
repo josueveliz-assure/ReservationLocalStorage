@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Form</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Form practice">
+        <meta name="author" content="Josue Veliz">
+        <link rel="icon" href="form.png" type="image/x-icon">
+        <script defer src="form.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Reservation Request</h1>
+        <form id="bookForm" onsubmit="handleSubmit(event);" novalidate>
+            <fieldset>
+                <legend>General Information</legend>
+                <label for="arrival">Arrival Date:</label>
+                <input type="date" id="arrival" name="arrival" required>
+                <p id="arrivalError" class="error"></p>
+
+                <label for="nights">Nights:</label>
+                <input type="number" id="nights" name="nights" min="1" max="30" required>
+                <p id="nightsError" class="error"></p>
+
+                <label for="adults">Adults:</label>
+                <select name="adults" id="adults">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <label for="children">Children:</label>
+                <select name="children" id="childrens">
+                    <option value="0" selected>0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Preferences</legend>
+                <label>Room type:</label>
+                <input type="radio" id="standard" name ="roomType" value="Standard" checked>
+                <label for="standard">Standard</label>
+                <input type="radio" id="business" name ="roomType" value="Business">
+                <label for="business">Business</label>
+                <input type="radio" id="suite" name ="roomType" value="Suite">
+                <label for="suite">Suite</label>
+                <br>
+                <label>Bed type:</label>
+                <input type="radio" id="king" name="bedType" value="King" checked>
+                <label for="king">King</label>
+                <input type="radio" id="doubleD" name="bedType" value="Double Double">
+                <label for="doubleD">Double Double</label>
+                <br>
+                <input type="checkbox" id="smoking" name="smoking" value="false">
+                <label for="smoking">Smoking</label>
+            </fieldset>
+            <fieldset>
+                <legend>Contact Information</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <p id="nameError" class="error"></p>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <p id="emailError" class="error"></p>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <p id="phoneError" class="error"></p>
+            </fieldset>
+            <input type="submit" value="Submit Reservations">
+            <input type="reset" value="Clear">
+        </form>
+    </body>
+</html>
